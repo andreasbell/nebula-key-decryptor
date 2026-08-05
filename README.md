@@ -22,25 +22,25 @@ The CLI accepts a passphrase and an optional key file. If no key file is provide
 ### Decrypt an encrypted Nebula CA private key
 
 ```bash
-uv run nebula-key-decryptor -d "your-passphrase" ./ca.key > decrypted-key.pem
+uv run nebula-key-decryptor -d "your-passphrase" ca.key > decrypted.key
 ```
 
 Or via stdin:
 
 ```bash
-uv run nebula-key-decryptor -d "your-passphrase" < ./ca.key > decrypted-key.pem
+uv run nebula-key-decryptor -d "your-passphrase" < ca.key > decrypted.key
 ```
 
 ### Encrypt a decrypted Nebula CA private key
 
 ```bash
-uv run nebula-key-decryptor -e "your-passphrase" ./decrypted-key.pem > encrypted-key.pem
+uv run nebula-key-decryptor -e "your-passphrase" ca.key > encrypted.key
 ```
 
 Or via stdin:
 
 ```bash
-uv run nebula-key-decryptor -e "your-passphrase" < ./decrypted-key.pem > encrypted-key.pem
+uv run nebula-key-decryptor -e "your-passphrase" < ca.key > encrypted.key
 ```
 
 ## Notes
@@ -48,3 +48,4 @@ uv run nebula-key-decryptor -e "your-passphrase" < ./decrypted-key.pem > encrypt
 - The passphrase is used with Argon2id and AES-256-GCM.
 - This tool is intended for working with Nebula CA private keys and only and its key format.
 - The tool supports both the `ED25519` and `ECDSA P256` key format. 
+- Default Argon2 parameters are slightly differetnt than what nebula uses as default parameters. Use the optional CLI arguments to set your own Argon2 parameters. 
