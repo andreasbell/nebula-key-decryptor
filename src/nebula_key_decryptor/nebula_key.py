@@ -113,7 +113,7 @@ def encrypt(
     data.ciphertext = nonce
     data.ciphertext += binary_encrypted_data
 
-    print(data)
+    #print(data)
 
     # Convert encrypted key to base 64 and add header and footer
     binary_encrypted_key = data.SerializeToString()
