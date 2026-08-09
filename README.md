@@ -46,6 +46,6 @@ uv run nebula-key-decryptor -e "your-passphrase" < ca.key > encrypted.key
 ## Notes
 
 - The passphrase is used with Argon2id and AES-256-GCM.
-- This tool is intended for working with Nebula CA private keys and only and its key format.
-- The tool supports both the `ED25519` and `ECDSA P256` key format. 
-- Default Argon2 parameters are slightly differetnt than what nebula uses as default parameters. Use the optional CLI arguments to set your own Argon2 parameters. 
+- This tool is intended for working with the nebula CA private key format.
+- The tool supports both the `ED25519` and `ECDSA P256` key formats. 
+- Default Argon2 parameters are slightly differetnt than what nebula uses as default parameters. Use the optional CLI arguments to change the Argon2 parameters. 

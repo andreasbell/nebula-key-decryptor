@@ -1,10 +1,10 @@
-from email import header
-
-from cryptography.hazmat.primitives.ciphers.aead import AESGCM
-from argon2.low_level import hash_secret_raw, Type
-from .proto_messages import EncryptedKey
 import base64
 import os
+
+from argon2.low_level import Type, hash_secret_raw
+from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+
+from .proto_messages import EncryptedKey
 
 KEY_TYPES = ["ED25519", "ED25519 ENCRYPTED", "ECDSA P256", "ECDSA P256 ENCRYPTED"]
 KEY_HEADER = "-----BEGIN NEBULA {} PRIVATE KEY-----"
